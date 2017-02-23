@@ -40,7 +40,8 @@ public class Algorithm {
                 if (cacheSize >= videoSize){
                     currCache.addVideo(scoreEntry.getKey());
                     cacheSize -= videoSize;
-                } else {
+                }
+                if (cacheSize == 0){
                     break;
                 }
             }
