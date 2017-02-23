@@ -7,6 +7,10 @@ import java.util.*;
 public class Algorithm {
     List<Cache> cacheList;
 
+    public Algorithm(List<Cache> caches){
+        cacheList = caches;
+    }
+
     private void calcScore(){
         for (Cache currCache: cacheList){
             Set<Endpoint> cacheEps= currCache.endpointLatency.keySet();
