@@ -13,7 +13,7 @@ public class Algorithm {
 
     public void run(){
         for (Cache currCache: cacheList){
-            Set<Endpoint> cacheEps= currCache.endpointLatency.keySet();
+            Set<Endpoint> cacheEps = currCache.endpointLatency.keySet();
             HashMap<Video, Integer> videoScores = new HashMap();
 
             for (Endpoint currEp : cacheEps){
@@ -34,9 +34,9 @@ public class Algorithm {
                 }
             });
 
+            int cacheSize = currCache.freeSpace;
             for (Map.Entry<Video, Integer> scoreEntry : scoreEntriesList){
                 int videoSize = scoreEntry.getKey().sizeMb;
-                int cacheSize = currCache.freeSpace;
                 if (cacheSize >= videoSize){
                     currCache.addVideo(scoreEntry.getKey());
                     cacheSize -= videoSize;

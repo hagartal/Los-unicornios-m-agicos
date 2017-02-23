@@ -11,7 +11,32 @@ public class Main {
         Algorithm bestAlgEver = new Algorithm(bestDataCenterEver);
         bestAlgEver.run();
         try {
-            bestDataCenterEver.outputSolution("output_filename");
+            bestDataCenterEver.outputSolution("me_at_the_zoo_output.txt");
+        } catch (Exception E){
+        }
+
+
+        bestDataCenterEver = bestParserEver.parse("kittens.in");
+        bestAlgEver = new Algorithm(bestDataCenterEver);
+        bestAlgEver.run();
+        try {
+            bestDataCenterEver.outputSolution("kittens_output.txt");
+        } catch (Exception E){
+        }
+
+        bestDataCenterEver = bestParserEver.parse("trending_today.in");
+        bestAlgEver = new Algorithm(bestDataCenterEver);
+        bestAlgEver.run();
+        try {
+            bestDataCenterEver.outputSolution("trending_today_output.txt");
+        } catch (Exception E){
+        }
+
+        bestDataCenterEver = bestParserEver.parse("videos_worth_spreading.in");
+        bestAlgEver = new Algorithm(bestDataCenterEver);
+        bestAlgEver.run();
+        try {
+            bestDataCenterEver.outputSolution("videos_worth_spreading_output.txt");
         } catch (Exception E){
         }
     }
