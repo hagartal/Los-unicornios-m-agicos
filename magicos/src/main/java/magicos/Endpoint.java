@@ -8,8 +8,8 @@ import java.util.List;
  */
 public class Endpoint {
     int id;
-    HashMap<Video, Integer> videoRequests;
-    HashMap<Cache, Integer> cacheLatency;
+    HashMap<Video, Integer> videoRequests = new HashMap<Video, Integer>();
+    HashMap<Cache, Integer> cacheLatency = new HashMap<Cache, Integer>();
     int dataCenterLatency;
 
     public Endpoint(int id, int dataCenterLatency) {
@@ -31,5 +31,5 @@ public class Endpoint {
     public void setDataCenterLatency(int dataCenterLatency) {
         this.dataCenterLatency = dataCenterLatency;
     }
-    
+
 }

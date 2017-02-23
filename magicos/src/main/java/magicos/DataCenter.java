@@ -1,15 +1,17 @@
 package magicos;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
 /**
  * Created by Noa Agiv on 2/23/2017.
  */
 public class DataCenter {
-    public HashMap<Integer, Video> videos;
-    public HashMap<Integer, Cache> caches;
-    public HashMap<Integer, Endpoint> endpoints;
+    public HashMap<Integer, Video> videos = new HashMap<Integer, Video>();
+    public HashMap<Integer, Cache> caches = new HashMap<Integer, Cache>();
+    public HashMap<Integer, Endpoint> endpoints = new HashMap<Integer, Endpoint>();
 
     public Video getVideo(int id){
         return videos.get(id);
@@ -33,5 +35,22 @@ public class DataCenter {
 
     public Endpoint addEndpoint(int id, int DsLatency){
         return endpoints.put(id, new Endpoint(id, DsLatency));
+    }
+
+    public String outputSolution(){
+        int numCaches = caches.size();
+        String solution = Integer.toString(numCaches);
+        Iterator it = caches.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            String line = pair.getKey().toString();
+            Cache cache = (Cache) pair.getValue();
+            for (Video video : cache.videos){
+                line = line + " " + video.id;
+            }
+            solution = solution + "\n" + line;
+            it.remove(); // avoids a ConcurrentModificationException
+        }
+        return solution;
     }
 }

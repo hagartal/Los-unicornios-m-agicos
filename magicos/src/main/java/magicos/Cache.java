@@ -1,6 +1,7 @@
 package magicos;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -10,8 +11,8 @@ public class Cache {
     int id;
     int space;
     int freeSpace;
-    HashMap<Endpoint, Integer> endpointLatency;
-    Set<Video> videos;
+    HashMap<Endpoint, Integer> endpointLatency = new HashMap<Endpoint, Integer>();
+    Set<Video> videos = new HashSet<Video>();
 
     public Cache(int id, int space) {
         this.id = id;
