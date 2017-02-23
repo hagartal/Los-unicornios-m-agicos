@@ -1,5 +1,6 @@
 package magicos;
 
+import java.util.HashMap;
 import java.util.Set;
 
 /**
@@ -9,6 +10,7 @@ public class Cache {
     int id;
     int space;
     int freeSpace;
+    HashMap<Endpoint, Integer> endpointLatency;
     Set<Video> videos;
 
     public Cache(int id, int space) {
@@ -26,7 +28,12 @@ public class Cache {
         freeSpace =-spaceMb;
     }
 
+
     public boolean isInCache(int videoId){
         return videos.contains(new Video(videoId, 0));
+    }
+
+    public void addEndpointLatency(Endpoint enpoint, int enpointLatency){
+        this.endpointLatency.put(enpoint, enpointLatency);
     }
 }

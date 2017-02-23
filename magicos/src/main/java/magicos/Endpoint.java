@@ -1,6 +1,7 @@
 package magicos;
 
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by Noa Agiv on 2/23/2017.
@@ -30,4 +31,5 @@ public class Endpoint {
     public void setDataCenterLatency(int dataCenterLatency) {
         this.dataCenterLatency = dataCenterLatency;
     }
+    
 }
