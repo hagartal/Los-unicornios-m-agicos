@@ -1,9 +1,13 @@
 package magicos;
 
+import java.io.*;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+
+import static java.awt.SystemColor.text;
+import static java.io.FileDescriptor.out;
 
 /**
  * Created by Noa Agiv on 2/23/2017.
@@ -52,5 +56,33 @@ public class DataCenter {
             it.remove(); // avoids a ConcurrentModificationException
         }
         return solution;
+    }
+
+    public void outputSolution(String filePath) throws FileNotFoundException{
+        BufferedWriter writer = null;
+        try
+        {
+            writer = new BufferedWriter( new FileWriter(filePath));
+            writer.write(outputSolution());
+
+        }
+        catch (IOException e)
+        {
+        }
+        finally
+        {
+            try
+            {
+                if ( writer != null)
+                    writer.close( );
+            }
+            catch ( IOException e)
+            {
+            }
+        }
+    }
+
+    public void calculateScore(){
+
     }
 }

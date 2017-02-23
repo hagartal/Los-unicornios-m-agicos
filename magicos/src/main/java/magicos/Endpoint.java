@@ -19,6 +19,7 @@ public class Endpoint {
 
     public void addCacheLatency(Cache cache, int cacheLatency){
         this.cacheLatency.put(cache, cacheLatency);
+        cache.addEndpointLatency(this, cacheLatency);
     }
     public void setCacheLatency(HashMap<Cache, Integer> cacheLatency) {
         this.cacheLatency = cacheLatency;
