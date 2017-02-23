@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args){
         Parser bestParserEver = new Parser();
-        DataCenter bestDataCenterEver = bestParserEver.parse("input_filename");
+        DataCenter bestDataCenterEver = bestParserEver.parse("me_at_the_zoo.in");
         Algorithm bestAlgEver = new Algorithm(bestDataCenterEver);
         bestAlgEver.run();
         try {
