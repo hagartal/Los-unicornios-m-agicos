@@ -41,9 +41,6 @@ public class Parser {
                             Integer.valueOf(line[1]));
                 }
             }
-            for(int i = 0; i<numOfCache; i++) {
-                dc.addCache(i, sizeOfCache);
-            }
             for(int i = 0; i<numOfReqDes; i++) {
                 line = sc.nextLine().split(" ");
                 dc.getEndPoint(Integer.valueOf(line[1])).addVideoRequest(dc.getVideo(Integer.valueOf(line[0])), Integer.valueOf(line[2]));
