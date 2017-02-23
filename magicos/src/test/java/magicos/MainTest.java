@@ -9,7 +9,7 @@ public class MainTest extends TestCase {
 
     @Test
     public void test (){
-//        Assert.assertEquals(3, y);
+        Main.main(null);
     }
 
 }

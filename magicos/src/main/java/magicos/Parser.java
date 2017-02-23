@@ -22,6 +22,9 @@ public class Parser {
             int numOfCache =  Integer.valueOf(settings[3]);
             int sizeOfCache =  Integer.valueOf(settings[4]);
 
+            for (int i = 0 ; i < numOfCache; i++){
+                dc.addCache(i, sizeOfCache);
+            }
             String[] line;
             for(int i = 0; i<numOfVideos; i++) {
                 dc.addVideo(i, Integer.valueOf(sc.next()));
@@ -34,7 +37,7 @@ public class Parser {
                 for(int j =0; j<numOfEpCache; j++) {
                     line = sc.nextLine().split(" ");
                     dc.getEndPoint(i).addCacheLatency(
-                            new Cache(Integer.valueOf(line[0]), sizeOfCache),
+                            dc.getCache(Integer.valueOf(line[0])),
                             Integer.valueOf(line[1]));
                 }
             }
