@@ -82,7 +82,34 @@ public class DataCenter {
         }
     }
 
-    public void calculateScore(){
-
-    }
+//    public int calculateBestRoutLatency(Endpoint endpoint, Video video){
+//        Iterator it = endpoint.cacheLatency.entrySet().iterator();
+//        int minLatency = Integer.MAX_VALUE;
+//        while (it.hasNext()) {
+//            Map.Entry pair = (Map.Entry)it.next();
+//            Cache cache = (Cache) pair.getKey();
+//            int latency = (Integer) pair.getValue();
+//            if (cache.isInCache(video.id) && latency < minLatency){
+//                minLatency = latency;
+//            }
+//            it.remove(); // avoids a ConcurrentModificationException
+//        }
+//        return minLatency;
+//    }
+//
+//    public void calculateScore(){
+//        for (Endpoint e : endpoints.values()){
+//            Iterator it = e.videoRequests.entrySet().iterator();
+//            while (it.hasNext()) {
+//                Map.Entry pair = (Map.Entry)it.next();
+//                Video video = (Video) pair.getKey();
+//                int requests = (Integer) pair.getValue();
+//                int latency = calculateBestRoutLatency(e, video);
+//                int worseLatency =  e.dataCenterLatency;
+//                int latencyImprove =
+//                it.remove(); // avoids a ConcurrentModificationException
+//            }
+//            return solution;
+//        }
+//    }
 }
