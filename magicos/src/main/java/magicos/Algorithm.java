@@ -7,11 +7,11 @@ import java.util.*;
 public class Algorithm {
     List<Cache> cacheList;
 
-    public Algorithm(List<Cache> caches){
-        cacheList = caches;
+    public Algorithm(DataCenter dc){
+        cacheList = new ArrayList<Cache>(dc.caches.values());
     }
 
-    private void calcScore(){
+    public void run(){
         for (Cache currCache: cacheList){
             Set<Endpoint> cacheEps= currCache.endpointLatency.keySet();
             HashMap<Video, Integer> videoScores = new HashMap();

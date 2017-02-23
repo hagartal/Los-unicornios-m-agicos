@@ -5,11 +5,15 @@ package magicos;
  */
 public class Main {
 
-    public static void main(String[] args) {
-        System.out.println("Hello, World");
+    public static void main(String[] args){
+        Parser bestParserEver = new Parser();
+        DataCenter bestDataCenterEver = bestParserEver.parse("input_filename");
+        Algorithm bestAlgEver = new Algorithm(bestDataCenterEver);
+        bestAlgEver.run();
+        try {
+            bestDataCenterEver.outputSolution("output_filename");
+        } catch (Exception E){
+        }
     }
 
-    public static int echoFunc(int x){
-        return x;
-    }
 }
